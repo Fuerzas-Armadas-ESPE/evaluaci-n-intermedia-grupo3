@@ -11,6 +11,7 @@ import TareaManager from './components/TareaManager';
 import RolManager from './components/RolManager';
 import Home from './components/Home';
 import './index.css';
+import Footer from './components/Footer';
 
 // Configurar el cliente Supabase
 const supabaseUrl = import.meta.env.VITE_REACT_APP_SUPABASE_URL;
@@ -77,6 +78,7 @@ export default function App() {
 				)}
 				</div>
 			</div>
+			<Footer />
 		</Router>
 		);
 	};
