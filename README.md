@@ -1,77 +1,42 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/YHXnZX8I)
-# sistemaDocente
+# Task Manager
 
-``` mermaid
-graph TD;
-    A[Autenticación] --> B[Gestión de Roles]
-    B --> C[Gestión de Temas]
-    C --> D[Registro de Actividades]
-    C --> E[Registro de Calificaciones]
-    C --> F[CRUD de Tareas]
-    F --> G[Marcar como impartida]
-    F --> H[Indicar actividad pendiente]
-    F --> I[Registrar observaciones]
-    C --> J[Reporte en PDF]
-    C --> K[Interfaz de Usuario]
-    D --> K
-    E --> K
-    F --> K
-    J --> K
-    K --> L[Agregar, editar y eliminar temas]
-    K --> M[Registrar actividades]
-    K --> N[Gestionar tareas]
-    N --> O[Marcar como realizada]
-    N --> P[Nueva actividad]
-    K --> Q[Generar reporte en PDF]
-  ```
+Este proyecto es una aplicación de gestión de tareas construida con React y Supabase.
 
-# Funcionalidades:
+## Tecnologías utilizadas
 
-## Autenticación:
+- React.js
+- Supabase
 
-Permite que los docentes se registren en el sistema para acceder a las funciones.
+## Cómo contribuir
 
-## Gestión de Roles (opcional):
+1. Haz un "Fork" del repositorio.
+2. Clona tu fork en tu máquina local (`git clone https://github.com/statick88/task`).
+3. Crea una nueva rama para tus cambios (`git checkout -b nombre-de-tu-rama`).
+4. Realiza tus cambios y haz un commit (`git commit -m "Descripción de los cambios"`).
+5. Haz un push a tu rama (`git push origin nombre-de-tu-rama`).
+6. Crea un "Pull Request" desde tu rama en GitHub.
 
-Permite la gestión de roles como Docente y Estudiante para una mejor organización (opcional).
+## Configuración de Supabase
 
-## Gestión de Temas:
+1. Crea una cuenta en [Supabase](https://supabase.io/).
+2. Crea un nuevo proyecto.
+3. En la sección "Database", crea una nueva tabla para las tareas. Puedes usar el siguiente código SQL:
+```sql
+CREATE TABLE task (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+```	
+4. Configura las variables de entorno `VITE_REACT_APP_SUPABASE_URL` y `VITE_REACT_APP_SUPABASE_ANON_KEY` con los valores proporcionados por Supabase.
 
-Permite a los docentes ingresar los temas del curso, especificando el título y objetivo de cada uno.
+## Mejoras futuras
 
-## Registro de Actividades:
-
-Permite registrar las actividades, para cada tema del curso.:
-
-    ✅ Realizadas
-    ❓ Pendientes
-
-## Registro de Calificaciones (opcional):
-
-Permite a los docentes asignar calificaciones a las actividades realizadas por los estudiantes en cada tema.
-CRUD de Tareas:
-
-## Proporciona un CRUD para gestionar las tareas de cada tema, incluyendo:
-
-1.  Marcar si se impartió la clase sobre un tema.
-2.  Indicar si está pendiente la actividad relacionada con el tema.
-3.  Registrar observaciones adicionales sobre el tema o actividad.
-
-## Reporte en PDF:
-
-Genera un reporte en formato PDF que resume el progreso del curso, incluyendo temas impartidos, actividades realizadas, calificaciones asignadas y estado de las tareas.
-
-# Interfaz de Usuario:
-
-La interfaz proporciona un entorno fácil de usar para que los docentes realicen las siguientes acciones:
-
-1.  Agregar, editar y eliminar temas del curso.
-2.  Registrar actividades realizadas para cada tema.
-3.  Gestionar las tareas relacionadas con cada tema (marcar como realizada, nueva actividad).
-4.  Generar un reporte en PDF del avance del curso.
-
-# Reporte en PDF:
-
-El reporte en PDF presenta un resumen claro del progreso del curso, con una tabla que incluye temas, objetivos, actividades, calificaciones y estado de las tareas. Además, puede contener gráficos o estadísticas para ofrecer un resumen visual del rendimiento del curso.
-
-Con este sistema, los docentes pueden mantener un registro detallado del avance del curso, lo que facilita la planificación, seguimiento y evaluación del progreso de los estudiantes.
+- ❌ Autenticación de usuarios.
+- ❌ Asignación de tareas a usuarios.
+- ❌ Actualización de tareas: permitir a los usuarios modificar las tareas existentes.
+- ❌ Notificaciones por correo electrónico cuando se asigna una tarea.
+- ❌ Filtros para la lista de tareas.
+- ❌ Ruta de tareas completadas: mostrar en una ruta separada las tareas que ya se han realizado.
