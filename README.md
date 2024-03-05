@@ -1,77 +1,70 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/YHXnZX8I)
-# sistemaDocente
+# Getting Started with Create React App
 
-``` mermaid
-graph TD;
-    A[Autenticación] --> B[Gestión de Roles]
-    B --> C[Gestión de Temas]
-    C --> D[Registro de Actividades]
-    C --> E[Registro de Calificaciones]
-    C --> F[CRUD de Tareas]
-    F --> G[Marcar como impartida]
-    F --> H[Indicar actividad pendiente]
-    F --> I[Registrar observaciones]
-    C --> J[Reporte en PDF]
-    C --> K[Interfaz de Usuario]
-    D --> K
-    E --> K
-    F --> K
-    J --> K
-    K --> L[Agregar, editar y eliminar temas]
-    K --> M[Registrar actividades]
-    K --> N[Gestionar tareas]
-    N --> O[Marcar como realizada]
-    N --> P[Nueva actividad]
-    K --> Q[Generar reporte en PDF]
-  ```
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Funcionalidades:
+## Available Scripts
 
-## Autenticación:
+In the project directory, you can run:
 
-Permite que los docentes se registren en el sistema para acceder a las funciones.
+### `npm start`
 
-## Gestión de Roles (opcional):
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Permite la gestión de roles como Docente y Estudiante para una mejor organización (opcional).
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Gestión de Temas:
+### `npm test`
 
-Permite a los docentes ingresar los temas del curso, especificando el título y objetivo de cada uno.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Registro de Actividades:
+### `npm run build`
 
-Permite registrar las actividades, para cada tema del curso.:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-    ✅ Realizadas
-    ❓ Pendientes
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Registro de Calificaciones (opcional):
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Permite a los docentes asignar calificaciones a las actividades realizadas por los estudiantes en cada tema.
-CRUD de Tareas:
+### `npm run eject`
 
-## Proporciona un CRUD para gestionar las tareas de cada tema, incluyendo:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-1.  Marcar si se impartió la clase sobre un tema.
-2.  Indicar si está pendiente la actividad relacionada con el tema.
-3.  Registrar observaciones adicionales sobre el tema o actividad.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Reporte en PDF:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Genera un reporte en formato PDF que resume el progreso del curso, incluyendo temas impartidos, actividades realizadas, calificaciones asignadas y estado de las tareas.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-# Interfaz de Usuario:
+## Learn More
 
-La interfaz proporciona un entorno fácil de usar para que los docentes realicen las siguientes acciones:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-1.  Agregar, editar y eliminar temas del curso.
-2.  Registrar actividades realizadas para cada tema.
-3.  Gestionar las tareas relacionadas con cada tema (marcar como realizada, nueva actividad).
-4.  Generar un reporte en PDF del avance del curso.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-# Reporte en PDF:
+### Code Splitting
 
-El reporte en PDF presenta un resumen claro del progreso del curso, con una tabla que incluye temas, objetivos, actividades, calificaciones y estado de las tareas. Además, puede contener gráficos o estadísticas para ofrecer un resumen visual del rendimiento del curso.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Con este sistema, los docentes pueden mantener un registro detallado del avance del curso, lo que facilita la planificación, seguimiento y evaluación del progreso de los estudiantes.
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
