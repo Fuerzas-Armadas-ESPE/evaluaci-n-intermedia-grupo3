@@ -4,46 +4,46 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const TaskList = ({ supabase }) => {
-  const [tasks, setTasks] = useState([]);
+  const [temas, setTemas] = useState([]);
 
   useEffect(() => {
-    async function fetchTasks() {
+    async function fetchTemas() {
       try {
-        let { data: tasks, error } = await supabase
-          .from('tasks')
+        let { data: temas, error } = await supabase
+          .from('Temas')
           .select('*')
-          .order('id', { ascending: true });
+          .order('TemaID', { ascending: true });
 
         if (error) {
           throw error;
         }
 
-        setTasks(tasks);
+        setTemas(temas);
       } catch (error) {
-        console.error('Error fetching tasks:', error.message);
+        console.error('Error fetching temas:', error.message);
       }
     }
 
-    fetchTasks();
+    fetchTemas();
   }, [supabase]);
 
-  async function deleteTask(id) {
+  async function deleteTema(id) {
     try {
-      await supabase.from('tasks').delete().eq('id', id);
-      setTasks(tasks.filter((task) => task.id !== id));
+      await supabase.from('Temas').delete().eq('TemaID', id);
+      setTemas(temas.filter((tema) => tema.TemaID !== id));
     } catch (error) {
-      console.error('Error deleting task:', error.message);
+      console.error('Error deleting tema:', error.message);
     }
   }
 
   return (
     <div>
-      <h2>Lista de Tareas</h2>
+      <h2>Lista de Temas</h2>
       <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.title}
-            <button onClick={() => deleteTask(task.id)}>Eliminar</button>
+        {temas.map((tema) => (
+          <li key={tema.TemaID}>
+            {tema.Titulo}
+            <button onClick={() => deleteTema(tema.TemaID)}>Eliminar</button>
           </li>
         ))}
       </ul>

@@ -3,19 +3,19 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const TaskForm = ({ supabase }) => {
-  const [title, setTitle] = useState('');
+  const [titulo, setTitulo] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title.trim()) return;
+    if (!titulo.trim()) return;
     try {
-      const { error } = await supabase.from('tasks').insert([{ title }]);
+      const { error } = await supabase.from('Temas').insert([{ Titulo: titulo }]);
       if (error) {
         throw error;
       }
-      setTitle('');
+      setTitulo('');
     } catch (error) {
-      console.error('Error adding task:', error.message);
+      console.error('Error adding tema:', error.message);
     }
   };
 
@@ -23,11 +23,11 @@ const TaskForm = ({ supabase }) => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Ingrese la Tarea"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Ingrese el Título del Tema"
+        value={titulo}
+        onChange={(e) => setTitulo(e.target.value)}
       />
-      <button type="submit">Añadir Tarea</button>
+      <button type="submit">Añadir Tema</button>
     </form>
   );
 };
